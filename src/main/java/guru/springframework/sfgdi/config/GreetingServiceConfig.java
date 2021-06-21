@@ -6,21 +6,14 @@ import guru.springframework.sfgdi.repositories.EnglishGreetingRepository;
 import guru.springframework.sfgdi.repositories.EnglishGreetingRepositoryImpl;
 import guru.springframework.sfgdi.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.*;
 
 @Configuration
+@ImportResource("classpath:sfgdi-config.xml")
 public class GreetingServiceConfig {
     @Bean
     EnglishGreetingRepository englishGreetingRepository() {
         return new EnglishGreetingRepositoryImpl();
-    }
-
-    @Bean
-    ConstructorGreetingServiceImp constructorGreetingServiceImp() {
-        return new ConstructorGreetingServiceImp();
     }
 
     @Bean
