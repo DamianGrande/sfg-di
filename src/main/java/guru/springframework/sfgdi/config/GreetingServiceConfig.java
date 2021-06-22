@@ -12,7 +12,6 @@ import org.springframework.context.annotation.*;
 
 @Configuration
 @ImportResource("classpath:sfgdi-config.xml")
-@PropertySource("classpath:datasource.properties")
 public class GreetingServiceConfig {
     @Bean
     EnglishGreetingRepository englishGreetingRepository() {
